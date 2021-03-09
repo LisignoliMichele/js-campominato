@@ -28,9 +28,12 @@ function randomNumber (min, max){
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 //
-// 1.creo 16 numeri casuali e se non sono gia presenti gli inserisco in un array
+// 1.creo 16 numeri casuali da 1 a 100, se non sono gia presenti gli inserisco in un array
 var cpuNumbers = [];
-while (cpuNumbers.length <= 16){
-  cpuNumbers.push(randomNumber(1, 100))
+while(cpuNumbers.length < 16){
+    var casualNumber = randomNumber (1, 100);
+    if(cpuNumbers.indexOf(casualNumber) == -1){
+      cpuNumbers.push(casualNumber);
+    }
 }
-console.log(cpuNumbers)
+console.log(cpuNumbers);
