@@ -49,7 +49,6 @@ while(cpuNumbers.length < 16){
       cpuNumbers.push(casualNumber);
     }
 }
-alert(cpuNumbers)
 // 2. chiedo all’utente (100 - 16) volte di inserire un numero alla volta,
 var userNumbers = [];
 while (userNumbers.length < 64 && isItIn(cpuNumbers, entredNumber) == false){
