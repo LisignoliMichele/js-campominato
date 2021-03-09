@@ -1,24 +1,3 @@
-// Il computer deve generare 16 numeri casuali tra 1 e 100.
-// I numeri non possono essere duplicati.
-// In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
-// L’utente non può inserire più volte lo stesso numero.
-
-// Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
-
-// La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
-
-// Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
-
-
-
-
-
-// BONUS: (da fare solo se funziona tutto il resto)
-// all’inizio il software richiede anche una difficoltà all’utente che cambia il range di numeri casuali:
-// con difficoltà 0 => tra 1 e 100
-// con difficoltà 1 => tra 1 e 80
-// con difficoltà 2 => tra 1 e 50
-
 
 // FUNZIONI
 // function crea numeri random
@@ -39,8 +18,6 @@ function isItIn(array, element){
   return false;
 }
 
-
-
 // 1.creo 16 numeri casuali da 1 a 100, se non sono gia presenti gli inserisco in un array
 var cpuNumbers = [];
 while(cpuNumbers.length < 16){
@@ -49,10 +26,11 @@ while(cpuNumbers.length < 16){
       cpuNumbers.push(casualNumber);
     }
 }
-// 2. chiedo all’utente (100 - 16) volte di inserire un numero alla volta,
+// 2. chiedo all’utente (100 - 16) volte di inserire un numero alla volta sempre che il numero non sia già presente nei numeri random del computer
 var userNumbers = [];
 while (userNumbers.length < 64 && isItIn(cpuNumbers, entredNumber) == false){
   var entredNumber = parseInt(prompt("please enter one number from 1 to 100"));
+  // il numero dev'essere compreso tra 1 e 100 e dev esser stato inserito una sola volta
   if ((entredNumber > 0 && entredNumber <= 100) && (isItIn(userNumbers, entredNumber) == false) ){
         userNumbers.push(entredNumber);
   }else if (isItIn(userNumbers, entredNumber)) {
@@ -61,8 +39,7 @@ while (userNumbers.length < 64 && isItIn(cpuNumbers, entredNumber) == false){
     alert("REMEMBER THE NUMBER MUST BE FROM 1 TO 100!!")
   }
 }
-
-
+// riporto il messaggo se l'utente ha vinto o ha calpestato la mina
 if (isItIn(cpuNumbers, entredNumber)){
   alert("BOOOOOOOMM ahi ahi ahi you got a bomb!!!")
 }else{
