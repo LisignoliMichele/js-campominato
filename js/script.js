@@ -1,9 +1,10 @@
-
 // FUNZIONI
+
 // function crea numeri random
-function randomNumber ( min, max ){
+function randomNumber (min, max){
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 //function trova se é presente un elemento in un array
 function isItIn(array, element){
   var i = 0;
