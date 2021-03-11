@@ -37,8 +37,9 @@ switch (choice) {
 
 // 1.creo 16 numeri casuali in base alla difficolta del livello, se i numeri non sono gia presenti gli inserisco in un array
 var cpuNumbers = [];
+var casualNumber = ;
 while(cpuNumbers.length < 16){
-  var casualNumber = randomNumber (1, maxBombs);
+  casualNumber = randomNumber (1, maxBombs);
   if(isItIn(cpuNumbers, casualNumber) == false){
     cpuNumbers.push(casualNumber);
   }
@@ -48,8 +49,9 @@ while(cpuNumbers.length < 16){
 var userNumbers = [];
 var toTheWin = maxBombs - 16;
 var explosed = false;
+var entredNumber = ;
 while (userNumbers.length < toTheWin && explosed == false){
-  var entredNumber = parseInt(prompt("please enter one number from 1 to 100"));
+  entredNumber = parseInt(prompt("please enter one number from 1 to 100"));
   // il numero dev'essere compreso tra 1 e 100 e dev esser stato inserito una sola volta
   if (isNaN(entredNumber) || entredNumber < 1 || entredNumber > 100){
     alert("REMEMBER THE NUMBER MUST BE FROM 1 TO 100!!");
@@ -67,4 +69,3 @@ if (isItIn(cpuNumbers, entredNumber)){
   alert("BOOOOOOOMM ahi ahi ahi you got a bomb!!! THE RESULT OF THE GAME IS: " + userNumbers.length + " POINTS")
 } else {
   alert("FANTASTIC you're the winner")
-}
